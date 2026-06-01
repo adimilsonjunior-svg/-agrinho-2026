@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Rotação de Culturas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🌱 Agro Forte, Futuro Sustentável</h1>
+        <p>Simulador de Rotação de Culturas</p>
+    </header>
+
+    <main>
+
+        <section class="controles">
+            <label for="cultura">Escolha uma cultura:</label>
+            <select id="cultura">
+                <option value="soja">Soja</option>
+                <option value="milho">Milho</option>
+                <option value="pastagem">Pastagem</option>
+            </select>
+
+            <button id="plantarBtn">Plantar em Todos os Lotes</button>
+            <button id="novaSafraBtn">Próxima Safra 🌿</button>
+
+            <p id="contadorSafra">Safra: 1</p>
+        </section>
+
+        <section class="fazenda">
+
+            <div class="lote" id="lote1">
+                <h2>Lote 1</h2>
+                <p>Vazio</p>
+            </div>
+
+            <div class="lote" id="lote2">
+                <h2>Lote 2</h2>
+                <p>Vazio</p>
+            </div>
+
+            <div class="lote" id="lote3">
+                <h2>Lote 3</h2>
+                <p>Vazio</p>
+            </div>
+
+            <div class="lote" id="lote4">
+                <h2>Lote 4</h2>
+                <p>Vazio</p>
+            </div>
+
+        </section>
+
+        <section class="resultado">
+            <h2>Status do Solo</h2>
+            <p id="mensagem">Escolha uma cultura para iniciar.</p>
+            <ul id="historico"></ul>
+        </section>
+
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
