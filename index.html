@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoRotação - Simulador de Agro Sustentável</title>
+    <title>EcoRotação - Simulador Agrinho</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -11,80 +11,53 @@
     <header>
         <div class="header-container">
             <div class="logo-area">
-                <div class="logo-provisorio">EcoRotação 🌾</div>
-                <small>Design Autoral criado via Canva</small>
+                <span class="logo-icone">🌱</span>
+                <h1>Agro Forte, Futuro Sustentável</h1>
             </div>
-            <h1>Agro Forte, Futuro Sustentável</h1>
-            <p class="subtitulo">O equilíbrio ideal entre alta produção e preservação ambiental</p>
+            <p class="subtitulo">Simulador de Rotação de Culturas • Equilíbrio entre Produção e Meio Ambiente</p>
         </div>
     </header>
 
     <main>
-        <section class="introducao">
-            <h2>Por que a Rotação de Culturas importa?</h2>
-            <p>
-                O desgaste do solo é um dos maiores desafios do ecossistema agrícola moderno. Alternar espécies vegetais na mesma área preserva os nutrientes biológicos, diminui pragas e quebra o ciclo de degradação. <strong>Teste suas habilidades abaixo:</strong> tente manter o equilíbrio da fazenda alternando entre Soja, Milho e Pastagem!
-            </p>
-        </section>
-
-        <section class="simulador-container">
-            <div class="controles">
-                <h3>Painel de Manejo</h3>
-                <label for="quadrante-select">Escolha o Talhão (Quadrante):</label>
-                <select id="quadrante-select">
-                    <option value="0">Quadrante 1 (Norte)</option>
-                    <option value="1">Quadrante 2 (Sul)</option>
-                    <option value="2">Quadrante 3 (Leste)</option>
-                    <option value="3">Quadrante 4 (Oeste)</option>
+        <section class="painel-controles">
+            <div class="controle-item">
+                <label for="cultura-select">Escolha uma cultura:</label>
+                <select id="cultura-select">
+                    <option value="Soja">Soja 🌱</option>
+                    <option value="Milho">Milho 🌽</option>
+                    <option value="Pastagem">Pastagem 🌾</option>
                 </select>
-
-                <div class="botoes-plantio">
-                    <button id="btn-soja" class="btn-plantar" data-cultura="Soja">Plantar Soja 🌱</button>
-                    <button id="btn-milho" class="btn-plantar" data-cultura="Milho">Plantar Milho 🌽</button>
-                    <button id="btn-pastagem" class="btn-plantar" data-cultura="Pastagem">Plantar Pastagem 🌾</button>
-                </div>
-
-                <button id="btn-resetar">Resetar Solo</button>
+            </div>
+            
+            <div class="botoes-grupo">
+                <button id="btn-plantar-todos" class="btn-principal">Plantar em Todos os Lotes</button>
+                <button id="btn-proxima-safra" class="btn-secundario">Próxima Safra 🔄</button>
             </div>
 
-            <div class="fazenda-grid">
-                <div class="quadrante" id="quad-0" data-index="0">
-                    <h4>Talhão Norte</h4>
-                    <p class="status-solo">Status: <span class="badge solo-fertil">Fértil</span></p>
-                    <p class="cultura-atual">Vazio</p>
-                    <div class="historico">Histórico: Nenhum</div>
-                </div>
-                <div class="quadrante" id="quad-1" data-index="1">
-                    <h4>Talhão Sul</h4>
-                    <p class="status-solo">Status: <span class="badge solo-fertil">Fértil</span></p>
-                    <p class="cultura-atual">Vazio</p>
-                    <div class="historico">Histórico: Nenhum</div>
-                </div>
-                <div class="quadrante" id="quad-2" data-index="2">
-                    <h4>Talhão Leste</h4>
-                    <p class="status-solo">Status: <span class="badge solo-fertil">Fértil</span></p>
-                    <p class="cultura-atual">Vazio</p>
-                    <div class="historico">Histórico: Nenhum</div>
-                </div>
-                <div class="quadrante" id="quad-3" data-index="3">
-                    <h4>Talhão Oeste</h4>
-                    <p class="status-solo">Status: <span class="badge solo-fertil">Fértil</span></p>
-                    <p class="cultura-atual">Vazio</p>
-                    <div class="historico">Histórico: Nenhum</div>
-                </div>
+            <div class="contador-safra">
+                <span>Safra Atual:</span>
+                <strong id="safra-valor">1</strong>
             </div>
         </section>
 
-        <section id="feedback-painel" class="feedback-escondido">
-            <h3 id="feedback-titulo">Manejo Concluído</h3>
-            <p id="feedback-texto"></p>
-        </section>
-    </main>
+        <section class="fazenda-grid">
+            <div class="lote-card" id="lote-1">
+                <h3>Lote 1</h3>
+                <div class="cultura-display">Vazio</div>
+                <div class="status-badge status-fertil">Fértil</div>
+            </div>
 
-    <footer>
-        <p>&copy; 2026 - Projeto Desenvolvido para o Concurso Agrinho. Sustentabilidade e Tecnologia.</p>
-    </footer>
+            <div class="lote-card" id="lote-2">
+                <h3>Lote 2</h3>
+                <div class="cultura-display">Vazio</div>
+                <div class="status-badge status-fertil">Fértil</div>
+            </div>
 
-    <script src="js/script.js"></script>
-</body>
-</html>
+            <div class="lote-card" id="lote-3">
+                <h3>Lote 3</h3>
+                <div class="cultura-display">Vazio</div>
+                <div class="status-badge status-fertil">Fértil</div>
+            </div>
+
+            <div class="lote-card" id="lote-4">
+                <h3>Lote
